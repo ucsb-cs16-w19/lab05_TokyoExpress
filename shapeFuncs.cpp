@@ -68,22 +68,11 @@ bool pointsApproxEqual(Point p1,
 }
 
 bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
+  // Precondition: Two boxes are inputted to the function
+  // Postcondition: Outputs whether or not the boxes are approximately equal
+  if (fabs((b2.ul.x - b1.ul.x)) < tolerance && fabs((b2.ul.y - b1.ul.y)) < tolerance && fabs((b2.width - b1.width)) < tolerance && fabs((b2.height - b1.height)) < tolerance) return true;
+  return false;
 
-  // Two boxes are approximately equal if their upper left corners are approximately 
-  // equal, and if their corresponding widths and height are approx equal.
-
-  // Remember: to test whether double values a and b are approximately equal, you need:
-  //   fabs(a - b) < tol
-  // Don't use a==b since this doesn't take tolerance into account.
-  // You'll need to use this technique for width and height
- 
-  // You may find it helpful to abstract out an "approxEqual" function that takes
-  // two parameters of type "double".  Put the prototype in your utility.h 
-  // and the definition in your utility.cpp file.
-
-  // TODO: FILL THIS IN WITH APPROPRIATE CODE
-
-  return false; // STUB!  TODO: Delete this line and comment and replace with appropriate code
 }
 
 
@@ -98,11 +87,21 @@ bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
 
 void initBox(struct Box *b, double ulx, double uly, double w, double h)
 {
+  // Precondition: Empty struct and 4 points are inputted
+  // Postcondition: A pointer to a box is created
+
+  (b->ul).x = ulx;
+  (b->ul).y = uly;
+  b->width = w;
+  b->height = h;
   return; // @@@ For a void function a "naked return" is a "do nothing" stub
 }
 
 
 double areaOfBox(Box b) {
-  return -42.0;  /* stub---make sure all tests fail initially */
-  // you can use b.width to access width, and b.height to access height
+  // Precondition: Actual box with 4 different points is inputted
+  // Postcondition: Area of box is outputted
+ 
+  return b.width * b.height; 
+  
 }
