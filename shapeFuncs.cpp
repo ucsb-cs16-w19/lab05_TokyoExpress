@@ -1,3 +1,6 @@
+// Author: Samuel Guo for UCSB CS16
+// Sources cited: Lab05 of course curriculum
+
 #include <iostream>
 #include <string>
 #include <sstream>  // for ostringstream

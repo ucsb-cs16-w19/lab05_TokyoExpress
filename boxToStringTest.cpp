@@ -1,3 +1,6 @@
+// Author: Samuel Guo for UCSB CS16
+// Sources cited: Lab05, pointToStringTest
+
 #include "shapes.h"
 #include "shapeFuncs.h"
 #include "tddFuncs.h"
