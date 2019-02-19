@@ -48,10 +48,13 @@ string pointToString(Point p, int precision) {
 }
 
 string boxToString(Box b, int precision) {
+  // Precondition: Real box and precision number is inputted
+  // Postcondition: String containing the box dimensions is outputted
+  ostringstream oss;
+  oss << setprecision(precision);
+  oss << "ul=(" << b.ul.x << "," << b.ul.y << "),w=" << b.width << ",h=" << b.height;
   
-  // SAMPLE FORMAT: ul=(3.4,-5),w=5,h=7
-  
-  return "stub!"; // TODO: Delete this line and comment and replace with appropriate code
+  return oss.str();
 }
  
 
